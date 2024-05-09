@@ -418,6 +418,14 @@ abstract class CoreDriver implements DriverInterface
      * @throws UnsupportedDriverActionException When operation not supported by the driver
      * @throws DriverException                  When the operation cannot be done
      */
+    public function sendKeys($xpath, $value)
+    {
+        throw new UnsupportedDriverActionException('Setting the auto-complete field value is not supported by %s', $this);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function check(string $xpath)
     {
         throw new UnsupportedDriverActionException('Checking a checkbox is not supported by %s', $this);
